@@ -28,7 +28,7 @@ function chartActivate() {
     $('.answered').remove();
     $('#my-chart').remove();
     $('#chart-container').append('<canvas id="my-chart"></canvas>');
-   var arrChartType=['bar','horizontalBar'];
+   var arrChartType=['bar','bar'];
    var arrChartColor=['red','blue','green'];
    var chartType=arrChartType[Math.floor(Math.random()*2)];
    var colorType=arrChartColor[Math.floor(Math.floor(Math.random()*3))];
