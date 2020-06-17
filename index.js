@@ -1,13 +1,13 @@
 function voiceactivate(){
     // Generate Chris statements
     var textArray = [
-               `Hi Tejas, Can you solve this math problem for me? If you can, 
+               `Hi buddy, Can you solve this math problem for me? If you can, 
                you are a super cougar!`,
-               `Hi Tejas, Can you work on this problem for me? If you can, you
+               `Hi buddy, Can you work on this problem for me? If you can, you
                are a cheerful cheetah!`,
-               `Hi Tejas, How about doing this math problem? I am sure, you can do
+               `Hi buddy, How about doing this math problem? I am sure, you can do
                it, because you are a terrific tiger!`,
-               `Hi Tejas, I'd love to see you work hard on this question, you can 
+               `Hi buddy, I'd love to see you work hard on this question, you can 
                then say, you are a laughing lion`
            ];
        var randomNumber = Math.floor(Math.random()*textArray.length);
@@ -115,7 +115,7 @@ function checkAnswer1(){
     var result1 = document.querySelector("#result1");
     if(answer1.value*1 == window.rightAnswer1) {
             result1.innerHTML = "<span class='answered' style='color:green; weight: bold; font-size:3vh'>You are right!</span>";
-            speechSynthesis.speak(new SpeechSynthesisUtterance('That is awesome Tejas'));
+            speechSynthesis.speak(new SpeechSynthesisUtterance('That is awesome buddy'));
             $('#chrisButton').remove();
             $('#chrisImgStatement').remove();
             $('#sticker').append(`<img width='120 height='120' src=${animalImg}>`); 
@@ -123,7 +123,7 @@ function checkAnswer1(){
         }
         else {
             result1.innerHTML = "<span class='answered' style='color:red'>That is not correct, please try again</span>";
-            speechSynthesis.speak(new SpeechSynthesisUtterance('Try again Tejas'));
+            speechSynthesis.speak(new SpeechSynthesisUtterance('Try again buddy'));
             $("#checkButton1").attr("disabled", true);
             }
     }
@@ -135,7 +135,7 @@ function checkAnswer2(){
     var result2 = document.querySelector("#result2");
     if(answer2.value*1 == window.rightAnswer2) {
         result2.innerHTML = "<span class='answered' style='color:green; weight: bold; font-size:3vh'>You are right!</span>";
-        speechSynthesis.speak(new SpeechSynthesisUtterance('That is awesome Tejas'));
+        speechSynthesis.speak(new SpeechSynthesisUtterance('That is awesome buddy'));
         $('#chrisButton').remove();
         $('#chrisImgStatement').remove();
         $('#sticker').append(`<img width='120 height='120' src=${animalImg}>`); 
@@ -143,7 +143,7 @@ function checkAnswer2(){
     }
     else {
         result2.innerHTML = "<span class='answered' style='color:red'>That is not correct, please try again</span>";
-        speechSynthesis.speak(new SpeechSynthesisUtterance('Try again Tejas'));
+        speechSynthesis.speak(new SpeechSynthesisUtterance('Try again buddy'));
         $("#checkButton2").attr("disabled", true);
         }
         
