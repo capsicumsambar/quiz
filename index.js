@@ -1,27 +1,27 @@
-function voiceactivate(){
-    // Generate Chris statements
-    var textArray = [
-               `Hi buddy, Can you solve this math problem for me? If you can, 
-               you are a super cougar!`,
-               `Hi buddy, Can you work on this problem for me? If you can, you
-               are a cheerful cheetah!`,
-               `Hi buddy, How about doing this math problem? I am sure, you can do
-               it, because you are a terrific tiger!`,
-               `Hi buddy, I'd love to see you work hard on this question, you can 
-               then say, you are a laughing lion`
-           ];
-       var randomNumber = Math.floor(Math.random()*textArray.length);
-       $('img').remove();
-       $('#chrisImg').append('<img src="chris.jpg" style="width="120", height="120">')
-       document.querySelector('#chrisStatement').innerHTML = 
-       textArray[randomNumber];
+// function voiceactivate(){
+//     // Generate Chris statements
+//     var textArray = [
+//                `Hi buddy, Can you solve this math problem for me? If you can, 
+//                you are a super cougar!`,
+//                `Hi buddy, Can you work on this problem for me? If you can, you
+//                are a cheerful cheetah!`,
+//                `Hi buddy, How about doing this math problem? I am sure, you can do
+//                it, because you are a terrific tiger!`,
+//                `Hi buddy, I'd love to see you work hard on this question, you can 
+//                then say, you are a laughing lion`
+//            ];
+//        var randomNumber = Math.floor(Math.random()*textArray.length);
+//        $('img').remove();
+//        $('#chrisImg').append('<img src="chris.jpg" style="width="120", height="120">')
+//        document.querySelector('#chrisStatement').innerHTML = 
+//        textArray[randomNumber];
        
-   // Speech API https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API
-       var synth = window.speechSynthesis;
-       var txt = document.querySelector('p').innerHTML;
-       var utterThis = new SpeechSynthesisUtterance(txt);
-       synth.speak(utterThis);
-    }
+//    // Speech API https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API
+//        var synth = window.speechSynthesis;
+//        var txt = document.querySelector('p').innerHTML;
+//        var utterThis = new SpeechSynthesisUtterance(txt);
+//        synth.speak(utterThis);
+//     }
    // CHARTS
 function chartActivate() {
     $('#answer1').val("");
@@ -108,7 +108,7 @@ function chartActivate() {
     $("#checkButton2").attr("disabled", false); //activate check button only after input box has input
   });
 function checkAnswer1(){
-    var arrAnimalImg = ['lion.jpg','tiger.jpg','puma.jpg','ocelot.jpg','wildkratts.jpg','cheetah.jpg',
+    var arrAnimalImg = ['lion.jpg','tiger.jpg','puma.jpg','ocelot.jpg','greywolf.jpg','cheetah.jpg',
                         'whitetiger.jpg','leopard.jpg','rustycat.jpg','jaguar.jpg'];
     var animalImg = arrAnimalImg[Math.floor(Math.random()*10)];
     var answer1 = document.querySelector("#answer1");
@@ -116,10 +116,10 @@ function checkAnswer1(){
     if(answer1.value*1 == window.rightAnswer1) {
             result1.innerHTML = "<span class='answered' style='color:green; weight: bold; font-size:3vh'>You are right!</span>";
             speechSynthesis.speak(new SpeechSynthesisUtterance('That is awesome buddy'));
-            $('#chrisButton').remove();
-            $('#chrisImgStatement').remove();
+            // $('#chrisButton').remove();
+            // $('#chrisImgStatement').remove();
             $('#sticker').append(`<img width='120 height='120' src=${animalImg}>`); 
-            $("#checkButton1").attr("disabled", true);
+            $("#checkButton1").attr("disabled", false);
         }
         else {
             result1.innerHTML = "<span class='answered' style='color:red'>That is not correct, please try again</span>";
@@ -136,8 +136,8 @@ function checkAnswer2(){
     if(answer2.value*1 == window.rightAnswer2) {
         result2.innerHTML = "<span class='answered' style='color:green; weight: bold; font-size:3vh'>You are right!</span>";
         speechSynthesis.speak(new SpeechSynthesisUtterance('That is awesome buddy'));
-        $('#chrisButton').remove();
-        $('#chrisImgStatement').remove();
+        // $('#chrisButton').remove();
+        // $('#chrisImgStatement').remove();
         $('#sticker').append(`<img width='120 height='120' src=${animalImg}>`); 
         $("#checkButton2").attr("disabled", true);
     }
