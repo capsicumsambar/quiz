@@ -97,7 +97,7 @@ function chartActivate() {
        var ranNum = Math.floor(Math.random()*5)
        var ranNum2 = ranNum - 1;
        if(animalLabels[ranNum-1] == undefined) ranNum2 = ranNum + 1;
-       question2.innerHTML = "How much in <strong>total</strong> did "+animalLabels[ranNum]+" and "+animalLabels[ranNum2]+" eat?";
+       question2.innerHTML = "How much in <strong>total</strong> did <strong>"+animalLabels[ranNum]+"</strong> and <strong>"+animalLabels[ranNum2]+"</strong> eat?";
        window.rightAnswer2 = consumedQuantity[ranNum] + consumedQuantity[ranNum2];
     }
  //Question and answer section
