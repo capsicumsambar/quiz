@@ -38,9 +38,9 @@ function chartActivate() {
                     ['Falcon','Eagle','Vulture','Owl','Albatross'],
                     ['Orca','Shark','Piranha','Whale','Octopus']];  
    var animalLabels=arrAnimalLabels[Math.floor(Math.random()*arrAnimalLabels.length)];
-   var consumedQuantity=[Math.floor(Math.random()*10),Math.floor(Math.random()*15),
-                        Math.floor(Math.random()*15), Math.floor(Math.random()*10),
-                        Math.floor(Math.random()*25)];
+   var consumedQuantity=[Math.floor(Math.random()*40),Math.floor(Math.random()*30),
+                        Math.floor(Math.random()*50), Math.floor(Math.random()*40),
+                        Math.floor(Math.random()*30)];
    var datasetLabel='Number of food stuff eaten by each animal';
    // Creating chart object with parameters and options
    var ctx = document.getElementById('my-chart').getContext('2d');
@@ -118,8 +118,8 @@ function checkAnswer1(){
             speechSynthesis.speak(new SpeechSynthesisUtterance('That is awesome buddy'));
             // $('#chrisButton').remove();
             // $('#chrisImgStatement').remove();
-            $('#sticker').append(`<img width='120 height='120' src=${animalImg}>`); 
-            $("#checkButton1").attr("disabled", false);
+            $('#sticker').append(`<img width='120' height='120' src=${animalImg}>`); 
+            $("#checkButton1").attr("disabled", true);
         }
         else {
             result1.innerHTML = "<span class='answered' style='color:red'>That is not correct, please try again</span>";
@@ -138,7 +138,7 @@ function checkAnswer2(){
         speechSynthesis.speak(new SpeechSynthesisUtterance('That is awesome buddy'));
         // $('#chrisButton').remove();
         // $('#chrisImgStatement').remove();
-        $('#sticker').append(`<img width='120 height='120' src=${animalImg}>`); 
+        $('#sticker').append(`<img width='120' height='120' src=${animalImg}>`); 
         $("#checkButton2").attr("disabled", true);
     }
     else {
