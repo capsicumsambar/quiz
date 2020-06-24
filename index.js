@@ -99,6 +99,10 @@ function chartActivate() {
        if(animalLabels[ranNum-1] == undefined) ranNum2 = ranNum + 1;
        question2.innerHTML = "How much in <strong>total</strong> did <strong>"+animalLabels[ranNum]+"</strong> and <strong>"+animalLabels[ranNum2]+"</strong> eat?";
        window.rightAnswer2 = consumedQuantity[ranNum] + consumedQuantity[ranNum2];
+
+    //    max and min add
+        question3.innerHTML = "What is the <strong>total</strong> of <strong>most</strong> and <strong>least</strong> eaten?";
+        window.rightAnswer3 = Math.max(...consumedQuantity) + Math.min(...consumedQuantity);
     }
  //Question and answer section
  $('#answer1').keypress(function(){
@@ -106,6 +110,9 @@ function chartActivate() {
   });
   $('#answer2').keypress(function(){
     $("#checkButton2").attr("disabled", false); //activate check button only after input box has input
+  });
+  $('#answer3').keypress(function(){
+    $("#checkButton3").attr("disabled", false); //activate check button only after input box has input
   });
 function checkAnswer1(){
     var arrAnimalImg = ['lion.jpg','tiger.jpg','puma.jpg','ocelot.jpg','greywolf.jpg','cheetah.jpg',
@@ -128,16 +135,14 @@ function checkAnswer1(){
             }
     }
 function checkAnswer2(){
-    var arrAnimalImg = ['lion.jpg','tiger.jpg','puma.jpg','ocelot.jpg','wildkratts.jpg','cheetah.jpg',
-                        'whitetiger.jpg','leopard.jpg','rustycat.jpg','jaguar.jpg'];
+    var arrAnimalImg = ['lion.jpg','tiger.jpg','puma.jpg','ocelot.jpg','greywolf.jpg','cheetah.jpg',
+    'whitetiger.jpg','leopard.jpg','rustycat.jpg','jaguar.jpg'];
     var animalImg = arrAnimalImg[Math.floor(Math.random()*10)];
     var answer2 = document.querySelector("#answer2");
     var result2 = document.querySelector("#result2");
     if(answer2.value*1 == window.rightAnswer2) {
         result2.innerHTML = "<span class='answered' style='color:green; weight: bold; font-size:3vh'>You are right!</span>";
         speechSynthesis.speak(new SpeechSynthesisUtterance('That is awesome buddy'));
-        // $('#chrisButton').remove();
-        // $('#chrisImgStatement').remove();
         $('#sticker').append(`<img width='120' height='120' src=${animalImg}>`); 
         $("#checkButton2").attr("disabled", true);
     }
@@ -145,6 +150,25 @@ function checkAnswer2(){
         result2.innerHTML = "<span class='answered' style='color:red'>That is not correct, please try again</span>";
         speechSynthesis.speak(new SpeechSynthesisUtterance('Try again buddy'));
         $("#checkButton2").attr("disabled", true);
+        }
+        
+    }
+function checkAnswer3(){
+    var arrAnimalImg = ['lion.jpg','tiger.jpg','puma.jpg','ocelot.jpg','greywolf.jpg','cheetah.jpg',
+    'whitetiger.jpg','leopard.jpg','rustycat.jpg','jaguar.jpg'];
+    var animalImg = arrAnimalImg[Math.floor(Math.random()*10)];
+    var answer3 = document.querySelector("#answer3");
+    var result3 = document.querySelector("#result3");
+    if(answer3.value*1 == window.rightAnswer3) {
+        result3.innerHTML = "<span class='answered' style='color:green; weight: bold; font-size:3vh'>You are right!</span>";
+        speechSynthesis.speak(new SpeechSynthesisUtterance('That is awesome buddy'));
+        $('#sticker').append(`<img width='120' height='120' src=${animalImg}>`); 
+        $("#checkButton3").attr("disabled", true);
+    }
+    else {
+        result3.innerHTML = "<span class='answered' style='color:red'>That is not correct, please try again</span>";
+        speechSynthesis.speak(new SpeechSynthesisUtterance('Try again buddy'));
+        $("#checkButton3").attr("disabled", true);
         }
         
     }
