@@ -1,31 +1,8 @@
-// function voiceactivate(){
-//     // Generate Chris statements
-//     var textArray = [
-//                `Hi buddy, Can you solve this math problem for me? If you can, 
-//                you are a super cougar!`,
-//                `Hi buddy, Can you work on this problem for me? If you can, you
-//                are a cheerful cheetah!`,
-//                `Hi buddy, How about doing this math problem? I am sure, you can do
-//                it, because you are a terrific tiger!`,
-//                `Hi buddy, I'd love to see you work hard on this question, you can 
-//                then say, you are a laughing lion`
-//            ];
-//        var randomNumber = Math.floor(Math.random()*textArray.length);
-//        $('img').remove();
-//        $('#chrisImg').append('<img src="chris.jpg" style="width="120", height="120">')
-//        document.querySelector('#chrisStatement').innerHTML = 
-//        textArray[randomNumber];
-       
-//    // Speech API https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API/Using_the_Web_Speech_API
-//        var synth = window.speechSynthesis;
-//        var txt = document.querySelector('p').innerHTML;
-//        var utterThis = new SpeechSynthesisUtterance(txt);
-//        synth.speak(utterThis);
-//     }
    // CHARTS
 function chartActivate() {
     $('#answer1').val("");
     $('#answer2').val("");
+    $('#answer3').val("");
     $('.answered').remove();
     $('#my-chart').remove();
     $('#chart-container').append('<canvas id="my-chart"></canvas>');
