@@ -93,8 +93,8 @@ function chartActivate() {
   });
 function checkAnswer1(){
     var arrAnimalImg = ['lion.jpg','tiger.jpg','puma.jpg','ocelot.jpg','greywolf.jpg','cheetah.jpg',
-                        'whitetiger.jpg','leopard.jpg','rustycat.jpg','jaguar.jpg'];
-    var animalImg = arrAnimalImg[Math.floor(Math.random()*10)];
+                        'whitetiger.jpg','leopard.jpg','rustycat.jpg','jaguar.jpg','woodpecker.jpg'];
+    var animalImg = arrAnimalImg[Math.floor(Math.random()*11)];
     var answer1 = document.querySelector("#answer1");
     var result1 = document.querySelector("#result1");
     if(answer1.value*1 == window.rightAnswer1) {
@@ -113,8 +113,8 @@ function checkAnswer1(){
     }
 function checkAnswer2(){
     var arrAnimalImg = ['lion.jpg','tiger.jpg','puma.jpg','ocelot.jpg','greywolf.jpg','cheetah.jpg',
-    'whitetiger.jpg','leopard.jpg','rustycat.jpg','jaguar.jpg'];
-    var animalImg = arrAnimalImg[Math.floor(Math.random()*10)];
+    'whitetiger.jpg','leopard.jpg','rustycat.jpg','jaguar.jpg','woodpecker.jpg'];
+    var animalImg = arrAnimalImg[Math.floor(Math.random()*11)];
     var answer2 = document.querySelector("#answer2");
     var result2 = document.querySelector("#result2");
     if(answer2.value*1 == window.rightAnswer2) {
