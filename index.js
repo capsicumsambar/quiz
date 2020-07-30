@@ -1,8 +1,11 @@
    // CHARTS
 function chartActivate() {
     $('#answer1').val("");
+    $('#answer1').prop("disabled",false);
     $('#answer2').val("");
+    $('#answer2').prop("disabled",false);
     $('#answer3').val("");
+    $('#answer3').prop("disabled",false);
     $('.answered').remove();
     $('#my-chart').remove();
     $('#chart-container').append('<canvas id="my-chart"></canvas>');
@@ -83,7 +86,7 @@ function chartActivate() {
     }
  //Question and answer section
  $('#answer1').keypress(function(){
-    $("#checkButton1").attr("disabled", false); //activate check button only after input box has input
+    $("#checkButton1").prop("disabled", false); //activate check button only after input box has input
   });
   $('#answer2').keypress(function(){
     $("#checkButton2").attr("disabled", false); //activate check button only after input box has input
@@ -100,10 +103,9 @@ function checkAnswer1(){
     if(answer1.value*1 == window.rightAnswer1) {
             result1.innerHTML = "<span class='answered' style='color:green; weight: bold; font-size:3vh'>You are right!</span>";
             speechSynthesis.speak(new SpeechSynthesisUtterance('That is awesome buddy'));
-            // $('#chrisButton').remove();
-            // $('#chrisImgStatement').remove();
             $('#sticker').append(`<img width='120' height='120' src=${animalImg}>`); 
-            $("#checkButton1").attr("disabled", true);
+            $("#checkButton1").prop("disabled", true);
+            $('#answer1').prop("disabled",true);
         }
         else {
             result1.innerHTML = "<span class='answered' style='color:red'>That is not correct, please try again</span>";
@@ -122,6 +124,7 @@ function checkAnswer2(){
         speechSynthesis.speak(new SpeechSynthesisUtterance('That is awesome buddy'));
         $('#sticker').append(`<img width='120' height='120' src=${animalImg}>`); 
         $("#checkButton2").attr("disabled", true);
+        $('#answer2').prop("disabled",true);
     }
     else {
         result2.innerHTML = "<span class='answered' style='color:red'>That is not correct, please try again</span>";
@@ -141,6 +144,7 @@ function checkAnswer3(){
         speechSynthesis.speak(new SpeechSynthesisUtterance('That is awesome buddy'));
         $('#sticker').append(`<img width='120' height='120' src=${animalImg}>`); 
         $("#checkButton3").attr("disabled", true);
+        $('#answer3').prop("disabled",true);
     }
     else {
         result3.innerHTML = "<span class='answered' style='color:red'>That is not correct, please try again</span>";
